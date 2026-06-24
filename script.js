@@ -7,7 +7,7 @@ const JIRA_PROJECT = 'INC';
 const MAX_RESULTS  = 100;
 
 
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwmRIo0JKtOA0XJhXyAcnek4aB0MMO3etPf6dd8VjkW2V9dWb48Eq9q4IBtib3--3yDyA/exec';
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby9QbHMuC9Nd83xhhykPvLR-9pa9pFgKREruAX2eZblDgO243aYY_55YnKqGMVK9RJrZA/exec';
 // ─────────────────────────────────────────────
 
 function updateTotalBadge() {
@@ -61,7 +61,7 @@ async function syncData() {
 }
 
 // ─────────────────────────────────────────────
-// ###### FUNCIONES TRATAMIENTO ################
+// ######## FUNCIONES TRATAMIENTO ################
 // ─────────────────────────────────────────────
 
 document.getElementById('q').addEventListener('keydown', e => {
