@@ -23,6 +23,18 @@ function fmtDate(str) {
     hour12: true
   });
 }
+
+function fmtDateOnly(str) {
+  if (!str) return '—';
+  const d = new Date(str);
+  return d.toLocaleDateString('es-PE', { day: '2-digit', month: 'short' });
+}
+
+function fmtHour(str) {
+  if (!str) return '—';
+  const d = new Date(str);
+  return `${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
+}
 // ─────────────────────────────────────────────
 // FETCH ISSUE (APPS SCRIPT → JIRA)
 // ─────────────────────────────────────────────
@@ -338,12 +350,21 @@ for (const h of histories) {
 
     return `
       <div class="tl-event">
-        <div class="tl-dot-col">
-          <div class="tl-dot" style="${dotSt}"></div>
-          ${!isLast ? '<div class="tl-connector"></div>' : ''}
+        <div class="tl-left">
+          <div class="tl-time-block">
+            <span class="tl-date">${esc(fmtDateOnly(group.time))}</span>
+            <span class="tl-hour">${esc(fmtHour(group.time))}</span>
+          </div>
+          <div class="tl-dot-wrap">
+            <div class="tl-dot" style="${dotSt}"></div>
+            ${!isLast ? '<div class="tl-connector"></div>' : ''}
+          </div>
         </div>
         <div class="tl-body">
-          <div class="tl-time">${esc(time)}</div>
+          <div class="tl-time-block">
+            <span class="tl-date">${esc(fmtDateOnly(group.time))}</span>
+            <span class="tl-hour">${esc(fmtHour(group.time))}</span>
+          </div>
           ${eventsHtml}
         </div>
       </div>`;

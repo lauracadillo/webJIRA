@@ -168,15 +168,48 @@
   position: relative;
 }
 
-/* Columna del dot */
-.tl-dot-col {
+/* REEMPLAZA tu .tl-dot-col por esto */
+.tl-left {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 28px;
+  width: 90px;         /* más ancho para la hora */
   flex-shrink: 0;
+  padding-right: 12px;
 }
 
+.tl-time-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+  margin-bottom: 6px;
+}
+
+.tl-date {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--mv-muted);
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  font-family: 'Courier New', monospace;
+}
+
+.tl-hour {
+  font-size: 18px;       /* hora grande y prominente */
+  font-weight: 700;
+  color: var(--mv-blue); /* azul Movistar */
+  font-family: 'Courier New', monospace;
+  letter-spacing: 1px;
+  line-height: 1.1;
+}
+
+.tl-dot-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
 .tl-dot {
   width: 12px;
   height: 12px;
