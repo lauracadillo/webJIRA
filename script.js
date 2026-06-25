@@ -109,7 +109,7 @@ document.getElementById('q').addEventListener('keydown', e => {
 });
 
 // ─────────────────────────────────────────────
-// RENDER ISSUE (TU LÓGICA ORIGINAL)
+// RENDER ISSUE 
 // ─────────────────────────────────────────────
 
 function renderIssue(issue) {
@@ -269,7 +269,7 @@ function renderIssue(issue) {
 
     } else if (ev.type === 'equipored') {
       return `
-        <div class="tl-label" style="color:${DOT_COLORS.equipored}">Equipo de RED</div>
+        <div class="tl-label" style="color:${DOT_COLORS.gruporesolutor}">Equipo de RED</div>
         <div class="change-row" style="margin-top:4px">
           ${ev.from ? `<span class="val-old">${esc(ev.from)}</span><span class="arrow">→</span>` : ''}
           <span class="val-new" style="background:#fee2e2;color:#991b1b;border-color:#fca5a5">${esc(ev.to || '—')}</span>
@@ -296,14 +296,32 @@ function renderIssue(issue) {
     const dotSt = `background:${dotColor};box-shadow:0 0 0 1.5px ${dotColor};`;
 
     // Eventos dentro del grupo: si >1 se separan con un divisor fino
-    const eventsHtml = group.events.map((ev, ei) => {
-      const isLastEv = ei === group.events.length - 1;
-      return `
-        <div>
-          ${renderEventBody(ev)}
-          ${!isLastEv ? `<div style="margin:8px 0;border-top:1px dashed var(--border);"></div>` : ''}
+    // Separar eventos de "estado" de los demás
+    const statusEvs = group.events.filter(ev => ev.type === 'status');
+    const otherEvs  = group.events.filter(ev => ev.type !== 'status');
+
+    // Si hay tanto status como otros, mostrarlos en dos columnas
+    let eventsHtml = '';
+    if (statusEvs.length > 0 && otherEvs.length > 0) {
+      eventsHtml = `
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:start">
+          <div style="padding-right:8px;border-right:1px dashed var(--border)">
+            ${statusEvs.map(ev => `<div>${renderEventBody(ev)}</div>`).join('<div style="margin:8px 0;border-top:1px dashed var(--border)"></div>')}
+          </div>
+          <div>
+            ${otherEvs.map(ev => `<div>${renderEventBody(ev)}</div>`).join('<div style="margin:8px 0;border-top:1px dashed var(--border)"></div>')}
+          </div>
         </div>`;
-    }).join('');
+    } else {
+      eventsHtml = group.events.map((ev, ei) => {
+        const isLastEv = ei === group.events.length - 1;
+        return `
+          <div>
+            ${renderEventBody(ev)}
+            ${!isLastEv ? `<div style="margin:8px 0;border-top:1px dashed var(--border);"></div>` : ''}
+          </div>`;
+      }).join('');
+    }
 
     return `
       <div class="tl-event">
