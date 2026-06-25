@@ -246,12 +246,24 @@ function renderIssue(issue) {
         </div>
         ${ev.author ? `<div class="tl-sub">Por: ${esc(ev.author)}</div>` : ''}`;
 
-    } else if (ev.type === 'gruporesolutor') {
+   } else if (ev.type === 'gruporesolutor') {
+      function parseGrupo(str) {
+        if (!str) return null;
+        const m = str.match(/Level 1 values:\s*([^(]+)/i);
+        return m ? m[1].trim() : str;
+      }
+      function parseParent(str) {
+        if (!str) return null;
+        const m = str.match(/Parent values:\s*([^(]+)/i);
+        return m ? m[1].trim() : str;
+      }
+      const fromVal = parseParent(ev.to) || ev.from;
+      const toVal   = parseGrupo(ev.to);
       return `
         <div class="tl-label" style="color:${DOT_COLORS.gruporesolutor}">Cambio de grupo resolutor</div>
         <div class="change-row" style="margin-top:4px">
-          ${ev.from ? `<span class="val-old">${esc(ev.from)}</span><span class="arrow">→</span>` : ''}
-          <span class="val-new" style="background:#ccfbf1;color:#0f766e;border-color:#99f6e4">${esc(ev.to || '—')}</span>
+          ${fromVal ? `<span class="val-old">${esc(fromVal)}</span><span class="arrow">→</span>` : ''}
+          <span class="val-new" style="background:#ccfbf1;color:#0f766e;border-color:#99f6e4">${esc(toVal || '—')}</span>
         </div>
         ${ev.author ? `<div class="tl-sub">Por: ${esc(ev.author)}</div>` : ''}`;
 
