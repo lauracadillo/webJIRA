@@ -159,10 +159,12 @@ function renderIssue(issue) {
   events.push({ type: 'creation', time: createdAt });
 
   // 2. Cambios relevantes del changelog
-  for (const h of histories) {
+for (const h of histories) {
     for (const it of (h.items || [])) {
       if (isStatus(it) && it.fromString !== it.toString) {
-        events.push({
+        const key = minuteKey(h.created);
+        const dupe = events.some(e => e.type === 'status' && minuteKey(e.time) === key && e.from === it.fromString && e.to === it.toString);
+        if (!dupe) events.push({
           type: 'status',
           time: h.created,
           from: it.fromString,
@@ -170,8 +172,10 @@ function renderIssue(issue) {
           author: h.author?.displayName,
         });
       }
-      if (isGrupoResolutor(it) && it.fromString !== it.toString) {
-        events.push({
+      if (isGrupoResolutor(it) && it.toString) {
+        const key = minuteKey(h.created);
+        const dupe = events.some(e => e.type === 'gruporesolutor' && minuteKey(e.time) === key && e.from === it.fromString && e.to === it.toString);
+        if (!dupe) events.push({
           type: 'gruporesolutor',
           time: h.created,
           from: it.fromString,
@@ -179,8 +183,10 @@ function renderIssue(issue) {
           author: h.author?.displayName,
         });
       }
-      if (isEquipoRed(it) && it.fromString !== it.toString) {
-        events.push({
+      if (isEquipoRed(it) && it.toString) {
+        const key = minuteKey(h.created);
+        const dupe = events.some(e => e.type === 'equipored' && minuteKey(e.time) === key && e.from === it.fromString && e.to === it.toString);
+        if (!dupe) events.push({
           type: 'equipored',
           time: h.created,
           from: it.fromString,
