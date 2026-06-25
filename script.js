@@ -356,15 +356,11 @@ for (const h of histories) {
             <span class="tl-hour">${esc(fmtHour(group.time))}</span>
           </div>
           <div class="tl-dot-wrap">
-            <div class="tl-dot" style="${dotSt}"></div>
             ${!isLast ? '<div class="tl-connector"></div>' : ''}
           </div>
         </div>
         <div class="tl-body">
-          <div class="tl-time-block">
-            <span class="tl-date">${esc(fmtDateOnly(group.time))}</span>
-            <span class="tl-hour">${esc(fmtHour(group.time))}</span>
-          </div>
+          
           ${eventsHtml}
         </div>
       </div>`;
