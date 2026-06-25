@@ -1,5 +1,5 @@
 
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyGAgOIE-gJnL2GkMKYSJUQ5gjFdrvqrYGLmV_T0JFOnJAqiDROXlNJea0TUf6fR5f7/exec';
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxCYrCkq8inV0HY83-Vo1_fr2buNSN5QwIsbJ6_IvwDfU1CM-3Wm7HgLpFI2Cuuh61EmQ/exec';
 // ─────────────────────────────────────────────
 
 function esc(s) {
