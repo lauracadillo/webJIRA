@@ -356,7 +356,7 @@ for (const h of histories) {
       <div class="inc-head">
         <div class="inc-meta">
           <span class="key-badge">${esc(issue.key)}</span>
-          ${afectacion ? `<span style="font-size:11px;font-weight:500;padding:2px 8px;border-radius:4px;background:#fef3c7;color:#92400e;border:1px solid #fcd34d">${esc(afectacion)}</span>` : ''}
+          ${afectacion ? `<span style="font-size:11px;font-weight:600;padding:2px 9px;border-radius:10px;background:rgba(245,166,35,0.15);color:#F5A623;border:1px solid rgba(245,166,35,0.35)">${esc(afectacion)}</span>` : ''}
         </div>
         <div class="inc-summary">${esc(fields.summary || '—')}</div>
       </div>
