@@ -161,7 +161,7 @@ function renderIssue(issue) {
   // 2. Cambios relevantes del changelog
   for (const h of histories) {
     for (const it of (h.items || [])) {
-      if (isStatus(it)) {
+      if (isStatus(it) && it.fromString !== it.toString) {
         events.push({
           type: 'status',
           time: h.created,
@@ -170,7 +170,7 @@ function renderIssue(issue) {
           author: h.author?.displayName,
         });
       }
-      if (isGrupoResolutor(it) && it.toString) {
+      if (isGrupoResolutor(it) && it.fromString !== it.toString) {
         events.push({
           type: 'gruporesolutor',
           time: h.created,
@@ -179,7 +179,7 @@ function renderIssue(issue) {
           author: h.author?.displayName,
         });
       }
-      if (isEquipoRed(it) && it.toString) {
+      if (isEquipoRed(it) && it.fromString !== it.toString) {
         events.push({
           type: 'equipored',
           time: h.created,
