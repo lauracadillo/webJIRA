@@ -7,7 +7,7 @@ const JIRA_PROJECT = 'INC';
 const MAX_RESULTS  = 100;
 
 
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby9QbHMuC9Nd83xhhykPvLR-9pa9pFgKREruAX2eZblDgO243aYY_55YnKqGMVK9RJrZA/exec';
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwyAxgM6BVvmvr_xdgWJ1sVCBmr-tzUOqtBPvvbx-es3hAtnzQUpCEwPo2RilYDcXdyhQ/exec';
 // ─────────────────────────────────────────────
 
 function updateTotalBadge() {
