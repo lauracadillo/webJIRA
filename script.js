@@ -222,9 +222,16 @@ for (const h of histories) {
   // Ordenar por tiempo
   events.sort((a, b) => new Date(a.time || 0) - new Date(b.time || 0));
 
+  // Si en el mismo minuto hay equipored y gruporesolutor con el mismo "to", quitar el gruporesolutor
+  const filtered = events.filter(ev => {
+    if (ev.type !== 'gruporesolutor') return true;
+    const key = minuteKey(ev.time);
+    return !events.some(e => e.type === 'equipored' && minuteKey(e.time) === key && e.to === ev.to);
+  });
+
   // Agrupar eventos que ocurren en el mismo minuto
   const groups = [];
-  for (const ev of events) {
+  for (const ev of filtered) {
     const key = minuteKey(ev.time);
     const last = groups[groups.length - 1];
     if (last && last.key === key) {
