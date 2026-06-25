@@ -267,7 +267,7 @@ for (const h of histories) {
         <div class="tl-label" style="color:${DOT_COLORS.status}">Cambio de estado</div>
         <div class="change-row" style="margin-top:4px">
           ${ev.from ? `<span class="val-old">${esc(ev.from)}</span><span class="arrow">→</span>` : ''}
-          <span class="val-new" style="background:#ede9fe;color:#5b21b6;border-color:#c4b5fd">${esc(ev.to || '—')}</span>
+          <span class="val-new" style="background:#EEF4FD; color:#1A5FA8; border-color:#BBCFED>${esc(ev.to || '—')}</span>
         </div>
         ${ev.author ? `<div class="tl-sub">Por: ${esc(ev.author)}</div>` : ''}`;
 
@@ -288,7 +288,7 @@ for (const h of histories) {
         <div class="tl-label" style="color:${DOT_COLORS.gruporesolutor}">Cambio de grupo resolutor</div>
         <div class="change-row" style="margin-top:4px">
           ${fromVal ? `<span class="val-old">${esc(fromVal)}</span><span class="arrow">→</span>` : ''}
-          <span class="val-new" style="background:#ccfbf1;color:#0f766e;border-color:#99f6e4">${esc(toVal || '—')}</span>
+          <span class="val-new" style="background:#EAF5E0; color:#2E7010; border-color:#A8D888">${esc(toVal || '—')}</span>
         </div>
         ${ev.author ? `<div class="tl-sub">Por: ${esc(ev.author)}</div>` : ''}`;
 
@@ -297,7 +297,7 @@ for (const h of histories) {
         <div class="tl-label" style="color:${DOT_COLORS.gruporesolutor}">Equipo de RED</div>
         <div class="change-row" style="margin-top:4px">
           ${ev.from ? `<span class="val-old">${esc(ev.from)}</span><span class="arrow">→</span>` : ''}
-          <span class="val-new" style="background:#fee2e2;color:#991b1b;border-color:#fca5a5">${esc(ev.to || '—')}</span>
+          <span class="val-new" style=" background:#FDEEED; color:#B03030; border-color:#F0BBBB">${esc(ev.to || '—')}</span>
         </div>
         ${ev.author ? `<div class="tl-sub">Por: ${esc(ev.author)}</div>` : ''}`;
 
