@@ -1,6 +1,6 @@
 
 //TODO: AGRGERGAR HORA DE INICIO Y HORA DE FIN
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxCYrCkq8inV0HY83-Vo1_fr2buNSN5QwIsbJ6_IvwDfU1CM-3Wm7HgLpFI2Cuuh61EmQ/exec';
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzmQS0X_SDse5tpwDpF-ur5IFIv0TghfIGIDyA5B_GESZDQeTiuslH1L5h5G7spEHNF4g/exec';
 // ─────────────────────────────────────────────
 
 function esc(s) {
@@ -173,7 +173,7 @@ function renderIssue(issue) {
   const events = [];
 
   // 1. Inicio de alarma — viene de fields.customfield_10780 directamente
-  const alarmStart = fields.customfield_10780;
+  const alarmStart = fields.customfield_10780 || null;
   events.push({ type: 'creation', time: alarmStart });
 
   // 2. Recorrer changelog
@@ -295,7 +295,7 @@ function renderIssue(issue) {
     if (ev.type === 'creation') {
       return `
         <div class="tl-label" style="color:${DOT_COLORS.creation}">Inicio de alarma</div>
-        <div class="tl-detail">${alarmStart}</div>
+        <div class="tl-detail">${esc(alarmStart)}</div>
         ${fields.priority ? `<div class="tl-sub">Prioridad: ${esc(fields.priority?.name || fields.priority)}</div>` : ''}`;
 
     } else if (ev.type === 'status') {
