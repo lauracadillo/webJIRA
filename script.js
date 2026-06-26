@@ -1,4 +1,5 @@
 
+//TODO: AGRGERGAR HORA DE INICIO Y HORA DE FIN
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxCYrCkq8inV0HY83-Vo1_fr2buNSN5QwIsbJ6_IvwDfU1CM-3Wm7HgLpFI2Cuuh61EmQ/exec';
 // ─────────────────────────────────────────────
 
@@ -135,6 +136,7 @@ function renderIssue(issue) {
     gruporesolutor: '#0d9488',
     equipored:      '#dc2626',
     comentario:     '#b45309',
+    fin:            '#4ac36095',
   };
 
   function dotStyle(type) {
@@ -166,48 +168,63 @@ function renderIssue(issue) {
 
   const events = [];
 
-  // 1. Creación
-  const createdAt = histories.length > 0 ? histories[0].created : (fields.created || null);
-  events.push({ type: 'creation', time: createdAt });
+  // 1. Inicio de alarma
+  const alarmStart = fields?.customfield_10780 || (histories.length > 0 ? histories[0].created : null);
+  events.push({ type: 'creation', time: alarmStart });
 
-  // 2. Cambios relevantes del changelog
-for (const h of histories) {
+  // 2. Fin de alarma (del changelog)
+  let alarmEnd = null;
+  for (const h of histories) {
     for (const it of (h.items || [])) {
-      if (isStatus(it) && it.fromString !== it.toString) {
-        const key = minuteKey(h.created);
-        const dupe = events.some(e => e.type === 'status' && minuteKey(e.time) === key && e.from === it.fromString && e.to === it.toString);
-        if (!dupe) events.push({
-          type: 'status',
-          time: h.created,
-          from: it.fromString,
-          to: it.toString,
-          author: h.author?.displayName,
-        });
-      }
-      if (isGrupoResolutor(it) && it.toString) {
-        const key = minuteKey(h.created);
-        const dupe = events.some(e => e.type === 'gruporesolutor' && minuteKey(e.time) === key && e.from === it.fromString && e.to === it.toString);
-        if (!dupe) events.push({
-          type: 'gruporesolutor',
-          time: h.created,
-          from: it.fromString,
-          to: it.toString,
-          author: h.author?.displayName,
-        });
-      }
-      if (isEquipoRed(it) && it.toString) {
-        const key = minuteKey(h.created);
-        const dupe = events.some(e => e.type === 'equipored' && minuteKey(e.time) === key && e.from === it.fromString && e.to === it.toString);
-        if (!dupe) events.push({
-          type: 'equipored',
-          time: h.created,
-          from: it.fromString,
-          to: it.toString,
-          author: h.author?.displayName,
-        });
+      if (it.fieldId === 'customfield_10781' && it.to) {
+        alarmEnd = { time: it.to, label: it.toString };
       }
     }
   }
+  events.push({
+    type: 'fin',
+    time: alarmEnd ? alarmEnd.time : null,
+    label: alarmEnd ? alarmEnd.label : null,
+  });
+
+  // 2. Cambios relevantes del changelog
+  for (const h of histories) {
+      for (const it of (h.items || [])) {
+        if (isStatus(it) && it.fromString !== it.toString) {
+          const key = minuteKey(h.created);
+          const dupe = events.some(e => e.type === 'status' && minuteKey(e.time) === key && e.from === it.fromString && e.to === it.toString);
+          if (!dupe) events.push({
+            type: 'status',
+            time: h.created,
+            from: it.fromString,
+            to: it.toString,
+            author: h.author?.displayName,
+          });
+        }
+        if (isGrupoResolutor(it) && it.toString) {
+          const key = minuteKey(h.created);
+          const dupe = events.some(e => e.type === 'gruporesolutor' && minuteKey(e.time) === key && e.from === it.fromString && e.to === it.toString);
+          if (!dupe) events.push({
+            type: 'gruporesolutor',
+            time: h.created,
+            from: it.fromString,
+            to: it.toString,
+            author: h.author?.displayName,
+          });
+        }
+        if (isEquipoRed(it) && it.toString) {
+          const key = minuteKey(h.created);
+          const dupe = events.some(e => e.type === 'equipored' && minuteKey(e.time) === key && e.from === it.fromString && e.to === it.toString);
+          if (!dupe) events.push({
+            type: 'equipored',
+            time: h.created,
+            from: it.fromString,
+            to: it.toString,
+            author: h.author?.displayName,
+          });
+        }
+      }
+    }
 
   // 3. Último comentario
   const comments = fields?.comment?.comments || [];
@@ -232,8 +249,11 @@ for (const h of histories) {
   }
 
   // Ordenar por tiempo
-  events.sort((a, b) => new Date(a.time || 0) - new Date(b.time || 0));
-
+  events.sort((a, b) => {
+    if (a.time === null) return 1;
+    if (b.time === null) return 1;
+    return new Date(a.time || 0) - new Date(b.time || 0);
+  });
   // Si en el mismo minuto hay equipored y gruporesolutor con el mismo "to", quitar el gruporesolutor
   const filtered = events.filter(ev => {
     if (ev.type !== 'gruporesolutor') return true;
@@ -306,7 +326,12 @@ for (const h of histories) {
         <div class="tl-label" style="color:${DOT_COLORS.comentario}">Último comentario</div>
         <div class="tl-detail">${esc(ev.value)}</div>
         ${ev.author ? `<div class="tl-sub">Por: ${esc(ev.author)}</div>` : ''}`;
-    }
+    } else if (ev.type === 'fin') {
+      return ev.label
+        ? `<div class="tl-label" style="color:${DOT_COLORS.fin}">Fin de alarma</div>
+           <div class="tl-detail" style="color:${DOT_COLORS.fin};font-weight:500">${esc(ev.label)}</div>`
+        : `<div class="tl-label" style="color:#6b7280">Fin de alarma</div>
+           <div class="tl-detail" style="color:#6b7280;font-weight:500;font-style:italic">TICKET ABIERTO</div>`;}
     return '';
   }
 
