@@ -1,0 +1,1128 @@
+[
+    {
+        "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations,customfield_18008.cmdb.label,customfield_18008.cmdb.objectKey,customfield_18008.cmdb.attributes",
+        "id": "2033091",
+        "self": "https://integratelperu.atlassian.net/rest/api/3/issue/2033091",
+        "key": "INC-174858",
+        "changelog": {
+            "startAt": 0,
+            "maxResults": 29,
+            "total": 29,
+            "histories": [
+                {
+                    "id": "19256265",
+                    "author": {
+                        "self": "https://integratelperu.atlassian.net/rest/api/3/user?accountId=557058%3Af58131cb-b67d-43c7-b30d-6b58d40bd077",
+                        "accountId": "557058:f58131cb-b67d-43c7-b30d-6b58d40bd077",
+                        "avatarUrls": {
+                            "48x48": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "24x24": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "16x16": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "32x32": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png"
+                        },
+                        "displayName": "Automation for Jira",
+                        "active": true,
+                        "timeZone": "America/Lima",
+                        "accountType": "app"
+                    },
+                    "created": "2026-06-17T11:06:31.555-0500",
+                    "items": [
+                        {
+                            "field": "status",
+                            "fieldtype": "jira",
+                            "fieldId": "status",
+                            "from": "10111",
+                            "fromString": "RESUELTO",
+                            "to": "10708",
+                            "toString": "Cerrado"
+                        }
+                    ],
+                    "historyMetadata": {}
+                },
+                {
+                    "id": "19189006",
+                    "author": {
+                        "self": "https://integratelperu.atlassian.net/rest/api/3/user?accountId=557058%3Af58131cb-b67d-43c7-b30d-6b58d40bd077",
+                        "accountId": "557058:f58131cb-b67d-43c7-b30d-6b58d40bd077",
+                        "avatarUrls": {
+                            "48x48": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "24x24": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "16x16": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "32x32": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png"
+                        },
+                        "displayName": "Automation for Jira",
+                        "active": true,
+                        "timeZone": "America/Lima",
+                        "accountType": "app"
+                    },
+                    "created": "2026-06-15T10:31:16.710-0500",
+                    "items": [
+                        {
+                            "field": "Detalle de Resolución",
+                            "fieldtype": "custom",
+                            "fieldId": "customfield_18741",
+                            "from": null,
+                            "fromString": null,
+                            "to": "",
+                            "toString": "_HUAWEI_\r\nSE VALIDA SERVICIO OPERATIVO Y SIN ALARMAS\r\n\r\n\r\nHuawei_extarosalesh"
+                        }
+                    ],
+                    "historyMetadata": {}
+                },
+                {
+                    "id": "19189005",
+                    "author": {
+                        "self": "https://integratelperu.atlassian.net/rest/api/3/user?accountId=557058%3Af58131cb-b67d-43c7-b30d-6b58d40bd077",
+                        "accountId": "557058:f58131cb-b67d-43c7-b30d-6b58d40bd077",
+                        "avatarUrls": {
+                            "48x48": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "24x24": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "16x16": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "32x32": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png"
+                        },
+                        "displayName": "Automation for Jira",
+                        "active": true,
+                        "timeZone": "America/Lima",
+                        "accountType": "app"
+                    },
+                    "created": "2026-06-15T10:31:16.502-0500",
+                    "items": [
+                        {
+                            "field": "# Transiciones",
+                            "fieldtype": "custom",
+                            "fieldId": "customfield_13273",
+                            "from": null,
+                            "fromString": null,
+                            "to": null,
+                            "toString": "1"
+                        },
+                        {
+                            "field": "Estado anterior",
+                            "fieldtype": "custom",
+                            "fieldId": "customfield_13285",
+                            "from": null,
+                            "fromString": null,
+                            "to": null,
+                            "toString": "Asignado N1"
+                        }
+                    ],
+                    "historyMetadata": {}
+                },
+                {
+                    "id": "19189004",
+                    "author": {
+                        "self": "https://integratelperu.atlassian.net/rest/api/3/user?accountId=712020%3A87f1fbf4-508d-4586-9b84-56a0e2721046",
+                        "accountId": "712020:87f1fbf4-508d-4586-9b84-56a0e2721046",
+                        "avatarUrls": {
+                            "48x48": "https://secure.gravatar.com/avatar/b743e4b319e4504dd8009bbed1bbae17?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FNI-1.png",
+                            "24x24": "https://secure.gravatar.com/avatar/b743e4b319e4504dd8009bbed1bbae17?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FNI-1.png",
+                            "16x16": "https://secure.gravatar.com/avatar/b743e4b319e4504dd8009bbed1bbae17?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FNI-1.png",
+                            "32x32": "https://secure.gravatar.com/avatar/b743e4b319e4504dd8009bbed1bbae17?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FNI-1.png"
+                        },
+                        "displayName": "NOC Integratel",
+                        "active": true,
+                        "timeZone": "America/Lima",
+                        "accountType": "atlassian"
+                    },
+                    "created": "2026-06-15T10:31:12.076-0500",
+                    "items": [
+                        {
+                            "field": "Approvers",
+                            "fieldtype": "custom",
+                            "fieldId": "customfield_10003",
+                            "from": null,
+                            "fromString": null,
+                            "to": "[712020:4840685d-95de-4e55-95a3-26b46dd1edb5]",
+                            "toString": "[Gestión Red NOC]"
+                        },
+                        {
+                            "field": "Fecha y hora de Fin",
+                            "fieldtype": "custom",
+                            "fieldId": "customfield_10781",
+                            "from": null,
+                            "fromString": null,
+                            "to": "2026-06-15T10:30:00-0500",
+                            "toString": "15/jun/26 10:30 AM"
+                        },
+                        {
+                            "field": "Causa Raiz",
+                            "fieldtype": "custom",
+                            "fieldId": "customfield_10958",
+                            "from": null,
+                            "fromString": null,
+                            "to": "621654",
+                            "toString": "ALTO CONSUMO DE CPU"
+                        },
+                        {
+                            "field": "Tipo de Resolución",
+                            "fieldtype": "custom",
+                            "fieldId": "customfield_13268",
+                            "from": null,
+                            "fromString": null,
+                            "to": "627062",
+                            "toString": "Cese de alarma"
+                        },
+                        {
+                            "field": "Motivo de Incidencia",
+                            "fieldtype": "custom",
+                            "fieldId": "customfield_18455",
+                            "from": null,
+                            "fromString": null,
+                            "to": "627061",
+                            "toString": "OTROS"
+                        },
+                        {
+                            "field": "Fecha y hora de cese de alarma",
+                            "fieldtype": "custom",
+                            "fieldId": "customfield_18456",
+                            "from": null,
+                            "fromString": null,
+                            "to": "2026-06-15T10:30:00-0500",
+                            "toString": "15/jun/26 10:30 AM"
+                        },
+                        {
+                            "field": "resolution",
+                            "fieldtype": "jira",
+                            "fieldId": "resolution",
+                            "from": null,
+                            "fromString": null,
+                            "to": "10014",
+                            "toString": "Finalized"
+                        },
+                        {
+                            "field": "status",
+                            "fieldtype": "jira",
+                            "fieldId": "status",
+                            "from": "11062",
+                            "fromString": "Asignado N1",
+                            "to": "10111",
+                            "toString": "RESUELTO"
+                        }
+                    ]
+                },
+                {
+                    "id": "19188979",
+                    "author": {
+                        "self": "https://integratelperu.atlassian.net/rest/api/3/user?accountId=712020%3A87f1fbf4-508d-4586-9b84-56a0e2721046",
+                        "accountId": "712020:87f1fbf4-508d-4586-9b84-56a0e2721046",
+                        "avatarUrls": {
+                            "48x48": "https://secure.gravatar.com/avatar/b743e4b319e4504dd8009bbed1bbae17?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FNI-1.png",
+                            "24x24": "https://secure.gravatar.com/avatar/b743e4b319e4504dd8009bbed1bbae17?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FNI-1.png",
+                            "16x16": "https://secure.gravatar.com/avatar/b743e4b319e4504dd8009bbed1bbae17?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FNI-1.png",
+                            "32x32": "https://secure.gravatar.com/avatar/b743e4b319e4504dd8009bbed1bbae17?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FNI-1.png"
+                        },
+                        "displayName": "NOC Integratel",
+                        "active": true,
+                        "timeZone": "America/Lima",
+                        "accountType": "atlassian"
+                    },
+                    "created": "2026-06-15T10:30:25.169-0500",
+                    "items": [
+                        {
+                            "field": "assignee",
+                            "fieldtype": "jira",
+                            "fieldId": "assignee",
+                            "from": "712020:4840685d-95de-4e55-95a3-26b46dd1edb5",
+                            "fromString": "Gestión Red NOC",
+                            "to": "712020:87f1fbf4-508d-4586-9b84-56a0e2721046",
+                            "toString": "NOC Integratel",
+                            "tmpFromAccountId": null,
+                            "tmpToAccountId": "712020:87f1fbf4-508d-4586-9b84-56a0e2721046"
+                        }
+                    ]
+                },
+                {
+                    "id": "19180993",
+                    "author": {
+                        "self": "https://integratelperu.atlassian.net/rest/api/3/user?accountId=557058%3Af58131cb-b67d-43c7-b30d-6b58d40bd077",
+                        "accountId": "557058:f58131cb-b67d-43c7-b30d-6b58d40bd077",
+                        "avatarUrls": {
+                            "48x48": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "24x24": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "16x16": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "32x32": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png"
+                        },
+                        "displayName": "Automation for Jira",
+                        "active": true,
+                        "timeZone": "America/Lima",
+                        "accountType": "app"
+                    },
+                    "created": "2026-06-15T02:15:27.988-0500",
+                    "items": [
+                        {
+                            "field": "Usuario Ultimo Comentario",
+                            "fieldtype": "custom",
+                            "fieldId": "customfield_19528",
+                            "from": null,
+                            "fromString": null,
+                            "to": "712020:88cd7b1b-bc21-4e98-9d4c-92e8b5dc010f",
+                            "toString": "Christian Ramos Neyra",
+                            "tmpFromAccountId": null,
+                            "tmpToAccountId": "712020:88cd7b1b-bc21-4e98-9d4c-92e8b5dc010f"
+                        },
+                        {
+                            "field": "Ultimo Comentario",
+                            "fieldtype": "custom",
+                            "fieldId": "customfield_19529",
+                            "from": null,
+                            "fromString": null,
+                            "to": "",
+                            "toString": "https://integratelperu.atlassian.net/rest/api/2/attachment/content/1003385"
+                        }
+                    ],
+                    "historyMetadata": {}
+                },
+                {
+                    "id": "19090622",
+                    "author": {
+                        "self": "https://integratelperu.atlassian.net/rest/api/3/user?accountId=712020%3A4840685d-95de-4e55-95a3-26b46dd1edb5",
+                        "accountId": "712020:4840685d-95de-4e55-95a3-26b46dd1edb5",
+                        "avatarUrls": {
+                            "48x48": "https://secure.gravatar.com/avatar/8e3e03589938f7c05a002c48fd17e85b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FGN-6.png",
+                            "24x24": "https://secure.gravatar.com/avatar/8e3e03589938f7c05a002c48fd17e85b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FGN-6.png",
+                            "16x16": "https://secure.gravatar.com/avatar/8e3e03589938f7c05a002c48fd17e85b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FGN-6.png",
+                            "32x32": "https://secure.gravatar.com/avatar/8e3e03589938f7c05a002c48fd17e85b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FGN-6.png"
+                        },
+                        "displayName": "Gestión Red NOC",
+                        "active": true,
+                        "timeZone": "America/Lima",
+                        "accountType": "atlassian"
+                    },
+                    "created": "2026-06-10T19:41:31.540-0500",
+                    "items": [
+                        {
+                            "field": "assignee",
+                            "fieldtype": "jira",
+                            "fieldId": "assignee",
+                            "from": null,
+                            "fromString": null,
+                            "to": "712020:4840685d-95de-4e55-95a3-26b46dd1edb5",
+                            "toString": "Gestión Red NOC",
+                            "tmpFromAccountId": null,
+                            "tmpToAccountId": "712020:4840685d-95de-4e55-95a3-26b46dd1edb5"
+                        }
+                    ]
+                },
+                {
+                    "id": "19040152",
+                    "author": {
+                        "self": "https://integratelperu.atlassian.net/rest/api/3/user?accountId=712020%3A88cd7b1b-bc21-4e98-9d4c-92e8b5dc010f",
+                        "accountId": "712020:88cd7b1b-bc21-4e98-9d4c-92e8b5dc010f",
+                        "avatarUrls": {
+                            "48x48": "https://secure.gravatar.com/avatar/a7ef88fe9403bc8a9b9711d5e5173c8e?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FCN-1.png",
+                            "24x24": "https://secure.gravatar.com/avatar/a7ef88fe9403bc8a9b9711d5e5173c8e?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FCN-1.png",
+                            "16x16": "https://secure.gravatar.com/avatar/a7ef88fe9403bc8a9b9711d5e5173c8e?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FCN-1.png",
+                            "32x32": "https://secure.gravatar.com/avatar/a7ef88fe9403bc8a9b9711d5e5173c8e?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FCN-1.png"
+                        },
+                        "displayName": "Christian Ramos Neyra",
+                        "active": true,
+                        "timeZone": "America/Lima",
+                        "accountType": "atlassian"
+                    },
+                    "created": "2026-06-09T09:13:14.862-0500",
+                    "items": [
+                        {
+                            "field": "Link",
+                            "fieldtype": "jira",
+                            "from": null,
+                            "fromString": null,
+                            "to": "INC-175373",
+                            "toString": "This work item is parent of INC-175373"
+                        }
+                    ]
+                },
+                {
+                    "id": "19020706",
+                    "author": {
+                        "self": "https://integratelperu.atlassian.net/rest/api/3/user?accountId=712020%3A4840685d-95de-4e55-95a3-26b46dd1edb5",
+                        "accountId": "712020:4840685d-95de-4e55-95a3-26b46dd1edb5",
+                        "avatarUrls": {
+                            "48x48": "https://secure.gravatar.com/avatar/8e3e03589938f7c05a002c48fd17e85b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FGN-6.png",
+                            "24x24": "https://secure.gravatar.com/avatar/8e3e03589938f7c05a002c48fd17e85b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FGN-6.png",
+                            "16x16": "https://secure.gravatar.com/avatar/8e3e03589938f7c05a002c48fd17e85b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FGN-6.png",
+                            "32x32": "https://secure.gravatar.com/avatar/8e3e03589938f7c05a002c48fd17e85b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FGN-6.png"
+                        },
+                        "displayName": "Gestión Red NOC",
+                        "active": true,
+                        "timeZone": "America/Lima",
+                        "accountType": "atlassian"
+                    },
+                    "created": "2026-06-08T15:29:30.875-0500",
+                    "items": [
+                        {
+                            "field": "timeestimate",
+                            "fieldtype": "jira",
+                            "fieldId": "timeestimate",
+                            "from": "0",
+                            "fromString": "0",
+                            "to": "0",
+                            "toString": "0"
+                        },
+                        {
+                            "field": "timespent",
+                            "fieldtype": "jira",
+                            "fieldId": "timespent",
+                            "from": "48000",
+                            "fromString": "48000",
+                            "to": "60000",
+                            "toString": "60000"
+                        },
+                        {
+                            "field": "WorklogId",
+                            "fieldtype": "jira",
+                            "from": null,
+                            "fromString": null,
+                            "to": "107438",
+                            "toString": "107438"
+                        }
+                    ]
+                },
+                {
+                    "id": "19020680",
+                    "author": {
+                        "self": "https://integratelperu.atlassian.net/rest/api/3/user?accountId=712020%3A4840685d-95de-4e55-95a3-26b46dd1edb5",
+                        "accountId": "712020:4840685d-95de-4e55-95a3-26b46dd1edb5",
+                        "avatarUrls": {
+                            "48x48": "https://secure.gravatar.com/avatar/8e3e03589938f7c05a002c48fd17e85b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FGN-6.png",
+                            "24x24": "https://secure.gravatar.com/avatar/8e3e03589938f7c05a002c48fd17e85b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FGN-6.png",
+                            "16x16": "https://secure.gravatar.com/avatar/8e3e03589938f7c05a002c48fd17e85b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FGN-6.png",
+                            "32x32": "https://secure.gravatar.com/avatar/8e3e03589938f7c05a002c48fd17e85b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FGN-6.png"
+                        },
+                        "displayName": "Gestión Red NOC",
+                        "active": true,
+                        "timeZone": "America/Lima",
+                        "accountType": "atlassian"
+                    },
+                    "created": "2026-06-08T15:28:35.421-0500",
+                    "items": [
+                        {
+                            "field": "timeestimate",
+                            "fieldtype": "jira",
+                            "fieldId": "timeestimate",
+                            "from": "0",
+                            "fromString": "0",
+                            "to": "0",
+                            "toString": "0"
+                        },
+                        {
+                            "field": "timespent",
+                            "fieldtype": "jira",
+                            "fieldId": "timespent",
+                            "from": "36000",
+                            "fromString": "36000",
+                            "to": "48000",
+                            "toString": "48000"
+                        },
+                        {
+                            "field": "WorklogId",
+                            "fieldtype": "jira",
+                            "from": null,
+                            "fromString": null,
+                            "to": "107434",
+                            "toString": "107434"
+                        }
+                    ]
+                },
+                {
+                    "id": "19020088",
+                    "author": {
+                        "self": "https://integratelperu.atlassian.net/rest/api/3/user?accountId=712020%3A4840685d-95de-4e55-95a3-26b46dd1edb5",
+                        "accountId": "712020:4840685d-95de-4e55-95a3-26b46dd1edb5",
+                        "avatarUrls": {
+                            "48x48": "https://secure.gravatar.com/avatar/8e3e03589938f7c05a002c48fd17e85b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FGN-6.png",
+                            "24x24": "https://secure.gravatar.com/avatar/8e3e03589938f7c05a002c48fd17e85b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FGN-6.png",
+                            "16x16": "https://secure.gravatar.com/avatar/8e3e03589938f7c05a002c48fd17e85b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FGN-6.png",
+                            "32x32": "https://secure.gravatar.com/avatar/8e3e03589938f7c05a002c48fd17e85b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FGN-6.png"
+                        },
+                        "displayName": "Gestión Red NOC",
+                        "active": true,
+                        "timeZone": "America/Lima",
+                        "accountType": "atlassian"
+                    },
+                    "created": "2026-06-08T15:14:32.805-0500",
+                    "items": [
+                        {
+                            "field": "timeestimate",
+                            "fieldtype": "jira",
+                            "fieldId": "timeestimate",
+                            "from": "0",
+                            "fromString": "0",
+                            "to": "0",
+                            "toString": "0"
+                        },
+                        {
+                            "field": "timespent",
+                            "fieldtype": "jira",
+                            "fieldId": "timespent",
+                            "from": "24000",
+                            "fromString": "24000",
+                            "to": "36000",
+                            "toString": "36000"
+                        },
+                        {
+                            "field": "WorklogId",
+                            "fieldtype": "jira",
+                            "from": null,
+                            "fromString": null,
+                            "to": "107418",
+                            "toString": "107418"
+                        }
+                    ]
+                },
+                {
+                    "id": "19020032",
+                    "author": {
+                        "self": "https://integratelperu.atlassian.net/rest/api/3/user?accountId=712020%3A4840685d-95de-4e55-95a3-26b46dd1edb5",
+                        "accountId": "712020:4840685d-95de-4e55-95a3-26b46dd1edb5",
+                        "avatarUrls": {
+                            "48x48": "https://secure.gravatar.com/avatar/8e3e03589938f7c05a002c48fd17e85b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FGN-6.png",
+                            "24x24": "https://secure.gravatar.com/avatar/8e3e03589938f7c05a002c48fd17e85b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FGN-6.png",
+                            "16x16": "https://secure.gravatar.com/avatar/8e3e03589938f7c05a002c48fd17e85b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FGN-6.png",
+                            "32x32": "https://secure.gravatar.com/avatar/8e3e03589938f7c05a002c48fd17e85b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FGN-6.png"
+                        },
+                        "displayName": "Gestión Red NOC",
+                        "active": true,
+                        "timeZone": "America/Lima",
+                        "accountType": "atlassian"
+                    },
+                    "created": "2026-06-08T15:12:57.405-0500",
+                    "items": [
+                        {
+                            "field": "timeestimate",
+                            "fieldtype": "jira",
+                            "fieldId": "timeestimate",
+                            "from": "0",
+                            "fromString": "0",
+                            "to": "0",
+                            "toString": "0"
+                        },
+                        {
+                            "field": "timespent",
+                            "fieldtype": "jira",
+                            "fieldId": "timespent",
+                            "from": "12000",
+                            "fromString": "12000",
+                            "to": "24000",
+                            "toString": "24000"
+                        },
+                        {
+                            "field": "WorklogId",
+                            "fieldtype": "jira",
+                            "from": null,
+                            "fromString": null,
+                            "to": "107412",
+                            "toString": "107412"
+                        }
+                    ]
+                },
+                {
+                    "id": "19019656",
+                    "author": {
+                        "self": "https://integratelperu.atlassian.net/rest/api/3/user?accountId=557058%3Af58131cb-b67d-43c7-b30d-6b58d40bd077",
+                        "accountId": "557058:f58131cb-b67d-43c7-b30d-6b58d40bd077",
+                        "avatarUrls": {
+                            "48x48": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "24x24": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "16x16": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "32x32": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png"
+                        },
+                        "displayName": "Automation for Jira",
+                        "active": true,
+                        "timeZone": "America/Lima",
+                        "accountType": "app"
+                    },
+                    "created": "2026-06-08T15:06:49.657-0500",
+                    "items": [
+                        {
+                            "field": "assignee",
+                            "fieldtype": "jira",
+                            "fieldId": "assignee",
+                            "from": "712020:87f1fbf4-508d-4586-9b84-56a0e2721046",
+                            "fromString": "NOC Integratel",
+                            "to": null,
+                            "toString": null
+                        }
+                    ],
+                    "historyMetadata": {}
+                },
+                {
+                    "id": "19019654",
+                    "author": {
+                        "self": "https://integratelperu.atlassian.net/rest/api/3/user?accountId=557058%3Af58131cb-b67d-43c7-b30d-6b58d40bd077",
+                        "accountId": "557058:f58131cb-b67d-43c7-b30d-6b58d40bd077",
+                        "avatarUrls": {
+                            "48x48": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "24x24": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "16x16": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "32x32": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png"
+                        },
+                        "displayName": "Automation for Jira",
+                        "active": true,
+                        "timeZone": "America/Lima",
+                        "accountType": "app"
+                    },
+                    "created": "2026-06-08T15:06:47.971-0500",
+                    "items": [
+                        {
+                            "field": "duedate",
+                            "fieldtype": "jira",
+                            "fieldId": "duedate",
+                            "from": "2026-06-23",
+                            "fromString": "2026-06-23 00:00:00.0",
+                            "to": null,
+                            "toString": null
+                        }
+                    ],
+                    "historyMetadata": {}
+                },
+                {
+                    "id": "19019653",
+                    "author": {
+                        "self": "https://integratelperu.atlassian.net/rest/api/3/user?accountId=557058%3Af58131cb-b67d-43c7-b30d-6b58d40bd077",
+                        "accountId": "557058:f58131cb-b67d-43c7-b30d-6b58d40bd077",
+                        "avatarUrls": {
+                            "48x48": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "24x24": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "16x16": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "32x32": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png"
+                        },
+                        "displayName": "Automation for Jira",
+                        "active": true,
+                        "timeZone": "America/Lima",
+                        "accountType": "app"
+                    },
+                    "created": "2026-06-08T15:06:47.799-0500",
+                    "items": [
+                        {
+                            "field": "Fecha fin asignado",
+                            "fieldtype": "custom",
+                            "fieldId": "customfield_12418",
+                            "from": "2026-06-08T14:59:00-0500",
+                            "fromString": "08/Jun/26 2:59 PM",
+                            "to": "2026-06-08T15:06:00-0500",
+                            "toString": "08/Jun/26 3:06 PM"
+                        }
+                    ],
+                    "historyMetadata": {}
+                },
+                {
+                    "id": "19019649",
+                    "author": {
+                        "self": "https://integratelperu.atlassian.net/rest/api/3/user?accountId=557058%3Ad2e5bd5c-dc49-41eb-a6f0-5e01093666c1",
+                        "accountId": "557058:d2e5bd5c-dc49-41eb-a6f0-5e01093666c1",
+                        "avatarUrls": {
+                            "48x48": "https://secure.gravatar.com/avatar/ef67bf2d6b781cf719eaa378d89efbbc?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FSJ-0.png",
+                            "24x24": "https://secure.gravatar.com/avatar/ef67bf2d6b781cf719eaa378d89efbbc?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FSJ-0.png",
+                            "16x16": "https://secure.gravatar.com/avatar/ef67bf2d6b781cf719eaa378d89efbbc?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FSJ-0.png",
+                            "32x32": "https://secure.gravatar.com/avatar/ef67bf2d6b781cf719eaa378d89efbbc?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FSJ-0.png"
+                        },
+                        "displayName": "ScriptRunner for Jira",
+                        "active": true,
+                        "timeZone": "America/Lima",
+                        "accountType": "app"
+                    },
+                    "created": "2026-06-08T15:06:43.962-0500",
+                    "items": [
+                        {
+                            "field": "Empresa - Grupo Resolutor",
+                            "fieldtype": "custom",
+                            "fieldId": "customfield_13272",
+                            "from": null,
+                            "fromString": "Parent values: INTEGRATEL(621318)Level 1 values: NOC N1(627038)",
+                            "to": null,
+                            "toString": "Parent values: INTEGRATEL(621318)Level 1 values: FLM HUAWEI(625362)"
+                        },
+                        {
+                            "field": "Fecha y hora de derivacion",
+                            "fieldtype": "custom",
+                            "fieldId": "customfield_19461",
+                            "from": null,
+                            "fromString": null,
+                            "to": "2026-06-08T15:06:00-0500",
+                            "toString": "08/Jun/26 3:06 PM"
+                        },
+                        {
+                            "field": "Comentario de Derivacion",
+                            "fieldtype": "custom",
+                            "fieldId": "customfield_19462",
+                            "from": null,
+                            "fromString": null,
+                            "to": "",
+                            "toString": "_HUAWEI_\r\n\r\nEBC se encuentra aislada, se deriva a FLM HUAWEI para su revisión.\r\n\r\n1.- Donde revisar: SRLL1_COSCOMBA3 | LL00009\r\n2.- Punto REMOTO: LLI_GT1_T8615_EBC_COSCOMBA_3\r\n3.- Tipo de afectación: TOTAL\r\n4.- Presentó alarmas previas de energía: No\r\n5.- Presentó intermitencias: No\r\n6.- Se encuentran los siguientes sitios dependientes de este nodo: LLI_GT1_T8615_EBC_COSCOMBA_3\r\n7.- Facilidades técnicas: \r\n\r\nSE TIENE AN739G_COSCOMB3_ANCASH EL CUAL ESTA CAIDO, DEPENDIENDO DE SRLL1_COSCOMBA3 Y SU PUNTO REMOTO LLI_GT1_T8615_EBC_COSCOMBA_3\r\n\r\nextdgudinoc"
+                        }
+                    ]
+                },
+                {
+                    "id": "19019644",
+                    "author": {
+                        "self": "https://integratelperu.atlassian.net/rest/api/3/user?accountId=712020%3A87f1fbf4-508d-4586-9b84-56a0e2721046",
+                        "accountId": "712020:87f1fbf4-508d-4586-9b84-56a0e2721046",
+                        "avatarUrls": {
+                            "48x48": "https://secure.gravatar.com/avatar/b743e4b319e4504dd8009bbed1bbae17?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FNI-1.png",
+                            "24x24": "https://secure.gravatar.com/avatar/b743e4b319e4504dd8009bbed1bbae17?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FNI-1.png",
+                            "16x16": "https://secure.gravatar.com/avatar/b743e4b319e4504dd8009bbed1bbae17?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FNI-1.png",
+                            "32x32": "https://secure.gravatar.com/avatar/b743e4b319e4504dd8009bbed1bbae17?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FNI-1.png"
+                        },
+                        "displayName": "NOC Integratel",
+                        "active": true,
+                        "timeZone": "America/Lima",
+                        "accountType": "atlassian"
+                    },
+                    "created": "2026-06-08T15:06:40.876-0500",
+                    "items": [
+                        {
+                            "field": "Link",
+                            "fieldtype": "jira",
+                            "from": null,
+                            "fromString": null,
+                            "to": "INC-174856",
+                            "toString": "This work item is parent of INC-174856"
+                        }
+                    ]
+                },
+                {
+                    "id": "19019628",
+                    "author": {
+                        "self": "https://integratelperu.atlassian.net/rest/api/3/user?accountId=712020%3A87f1fbf4-508d-4586-9b84-56a0e2721046",
+                        "accountId": "712020:87f1fbf4-508d-4586-9b84-56a0e2721046",
+                        "avatarUrls": {
+                            "48x48": "https://secure.gravatar.com/avatar/b743e4b319e4504dd8009bbed1bbae17?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FNI-1.png",
+                            "24x24": "https://secure.gravatar.com/avatar/b743e4b319e4504dd8009bbed1bbae17?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FNI-1.png",
+                            "16x16": "https://secure.gravatar.com/avatar/b743e4b319e4504dd8009bbed1bbae17?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FNI-1.png",
+                            "32x32": "https://secure.gravatar.com/avatar/b743e4b319e4504dd8009bbed1bbae17?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FNI-1.png"
+                        },
+                        "displayName": "NOC Integratel",
+                        "active": true,
+                        "timeZone": "America/Lima",
+                        "accountType": "atlassian"
+                    },
+                    "created": "2026-06-08T15:06:10.529-0500",
+                    "items": [
+                        {
+                            "field": "Equipo de RED",
+                            "fieldtype": "custom",
+                            "fieldId": "customfield_18452",
+                            "from": null,
+                            "fromString": null,
+                            "to": "626862",
+                            "toString": "FLM HUAWEI"
+                        },
+                        {
+                            "field": "status",
+                            "fieldtype": "jira",
+                            "fieldId": "status",
+                            "from": "11062",
+                            "fromString": "Asignado N1",
+                            "to": "11062",
+                            "toString": "Asignado N1"
+                        }
+                    ]
+                },
+                {
+                    "id": "19019428",
+                    "author": {
+                        "self": "https://integratelperu.atlassian.net/rest/api/3/user?accountId=712020%3A87f1fbf4-508d-4586-9b84-56a0e2721046",
+                        "accountId": "712020:87f1fbf4-508d-4586-9b84-56a0e2721046",
+                        "avatarUrls": {
+                            "48x48": "https://secure.gravatar.com/avatar/b743e4b319e4504dd8009bbed1bbae17?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FNI-1.png",
+                            "24x24": "https://secure.gravatar.com/avatar/b743e4b319e4504dd8009bbed1bbae17?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FNI-1.png",
+                            "16x16": "https://secure.gravatar.com/avatar/b743e4b319e4504dd8009bbed1bbae17?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FNI-1.png",
+                            "32x32": "https://secure.gravatar.com/avatar/b743e4b319e4504dd8009bbed1bbae17?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FNI-1.png"
+                        },
+                        "displayName": "NOC Integratel",
+                        "active": true,
+                        "timeZone": "America/Lima",
+                        "accountType": "atlassian"
+                    },
+                    "created": "2026-06-08T15:04:51.027-0500",
+                    "items": [
+                        {
+                            "field": "assignee",
+                            "fieldtype": "jira",
+                            "fieldId": "assignee",
+                            "from": null,
+                            "fromString": null,
+                            "to": "712020:87f1fbf4-508d-4586-9b84-56a0e2721046",
+                            "toString": "NOC Integratel",
+                            "tmpFromAccountId": null,
+                            "tmpToAccountId": "712020:87f1fbf4-508d-4586-9b84-56a0e2721046"
+                        }
+                    ]
+                },
+                {
+                    "id": "19019348",
+                    "author": {
+                        "self": "https://integratelperu.atlassian.net/rest/api/3/user?accountId=712020%3A4840685d-95de-4e55-95a3-26b46dd1edb5",
+                        "accountId": "712020:4840685d-95de-4e55-95a3-26b46dd1edb5",
+                        "avatarUrls": {
+                            "48x48": "https://secure.gravatar.com/avatar/8e3e03589938f7c05a002c48fd17e85b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FGN-6.png",
+                            "24x24": "https://secure.gravatar.com/avatar/8e3e03589938f7c05a002c48fd17e85b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FGN-6.png",
+                            "16x16": "https://secure.gravatar.com/avatar/8e3e03589938f7c05a002c48fd17e85b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FGN-6.png",
+                            "32x32": "https://secure.gravatar.com/avatar/8e3e03589938f7c05a002c48fd17e85b?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FGN-6.png"
+                        },
+                        "displayName": "Gestión Red NOC",
+                        "active": true,
+                        "timeZone": "America/Lima",
+                        "accountType": "atlassian"
+                    },
+                    "created": "2026-06-08T15:02:43.731-0500",
+                    "items": [
+                        {
+                            "field": "timeestimate",
+                            "fieldtype": "jira",
+                            "fieldId": "timeestimate",
+                            "from": null,
+                            "fromString": null,
+                            "to": "0",
+                            "toString": "0"
+                        },
+                        {
+                            "field": "timespent",
+                            "fieldtype": "jira",
+                            "fieldId": "timespent",
+                            "from": null,
+                            "fromString": null,
+                            "to": "12000",
+                            "toString": "12000"
+                        },
+                        {
+                            "field": "WorklogId",
+                            "fieldtype": "jira",
+                            "from": null,
+                            "fromString": null,
+                            "to": "107401",
+                            "toString": "107401"
+                        }
+                    ]
+                },
+                {
+                    "id": "19019180",
+                    "author": {
+                        "self": "https://integratelperu.atlassian.net/rest/api/3/user?accountId=557058%3Af58131cb-b67d-43c7-b30d-6b58d40bd077",
+                        "accountId": "557058:f58131cb-b67d-43c7-b30d-6b58d40bd077",
+                        "avatarUrls": {
+                            "48x48": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "24x24": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "16x16": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "32x32": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png"
+                        },
+                        "displayName": "Automation for Jira",
+                        "active": true,
+                        "timeZone": "America/Lima",
+                        "accountType": "app"
+                    },
+                    "created": "2026-06-08T14:59:43.977-0500",
+                    "items": [
+                        {
+                            "field": "External Ticket",
+                            "fieldtype": "custom",
+                            "fieldId": "customfield_10653",
+                            "from": null,
+                            "fromString": null,
+                            "to": null,
+                            "toString": "INC-20260608-00000165"
+                        }
+                    ],
+                    "historyMetadata": {}
+                },
+                {
+                    "id": "19019177",
+                    "author": {
+                        "self": "https://integratelperu.atlassian.net/rest/api/3/user?accountId=557058%3Af58131cb-b67d-43c7-b30d-6b58d40bd077",
+                        "accountId": "557058:f58131cb-b67d-43c7-b30d-6b58d40bd077",
+                        "avatarUrls": {
+                            "48x48": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "24x24": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "16x16": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "32x32": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png"
+                        },
+                        "displayName": "Automation for Jira",
+                        "active": true,
+                        "timeZone": "America/Lima",
+                        "accountType": "app"
+                    },
+                    "created": "2026-06-08T14:59:42.690-0500",
+                    "items": [
+                        {
+                            "field": "duedate",
+                            "fieldtype": "jira",
+                            "fieldId": "duedate",
+                            "from": null,
+                            "fromString": null,
+                            "to": "2026-06-23",
+                            "toString": "2026-06-23 00:00:00.0"
+                        }
+                    ],
+                    "historyMetadata": {}
+                },
+                {
+                    "id": "19019176",
+                    "author": {
+                        "self": "https://integratelperu.atlassian.net/rest/api/3/user?accountId=557058%3Af58131cb-b67d-43c7-b30d-6b58d40bd077",
+                        "accountId": "557058:f58131cb-b67d-43c7-b30d-6b58d40bd077",
+                        "avatarUrls": {
+                            "48x48": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "24x24": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "16x16": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "32x32": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png"
+                        },
+                        "displayName": "Automation for Jira",
+                        "active": true,
+                        "timeZone": "America/Lima",
+                        "accountType": "app"
+                    },
+                    "created": "2026-06-08T14:59:42.572-0500",
+                    "items": [
+                        {
+                            "field": "Fecha fin asignado",
+                            "fieldtype": "custom",
+                            "fieldId": "customfield_12418",
+                            "from": null,
+                            "fromString": null,
+                            "to": "2026-06-08T14:59:00-0500",
+                            "toString": "08/Jun/26 2:59 PM"
+                        }
+                    ],
+                    "historyMetadata": {}
+                },
+                {
+                    "id": "19019173",
+                    "author": {
+                        "self": "https://integratelperu.atlassian.net/rest/api/3/user?accountId=557058%3Af58131cb-b67d-43c7-b30d-6b58d40bd077",
+                        "accountId": "557058:f58131cb-b67d-43c7-b30d-6b58d40bd077",
+                        "avatarUrls": {
+                            "48x48": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "24x24": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "16x16": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "32x32": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png"
+                        },
+                        "displayName": "Automation for Jira",
+                        "active": true,
+                        "timeZone": "America/Lima",
+                        "accountType": "app"
+                    },
+                    "created": "2026-06-08T14:59:39.905-0500",
+                    "items": [
+                        {
+                            "field": "Componente inicial",
+                            "fieldtype": "custom",
+                            "fieldId": "customfield_14686",
+                            "from": null,
+                            "fromString": null,
+                            "to": null,
+                            "toString": "NOC MULTICAPA"
+                        },
+                        {
+                            "field": "Tipología inicial",
+                            "fieldtype": "custom",
+                            "fieldId": "customfield_15312",
+                            "from": null,
+                            "fromString": null,
+                            "to": null,
+                            "toString": "#INCIDENCIAS RED"
+                        }
+                    ],
+                    "historyMetadata": {}
+                },
+                {
+                    "id": "19019170",
+                    "author": {
+                        "self": "https://integratelperu.atlassian.net/rest/api/3/user?accountId=557058%3Af58131cb-b67d-43c7-b30d-6b58d40bd077",
+                        "accountId": "557058:f58131cb-b67d-43c7-b30d-6b58d40bd077",
+                        "avatarUrls": {
+                            "48x48": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "24x24": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "16x16": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "32x32": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png"
+                        },
+                        "displayName": "Automation for Jira",
+                        "active": true,
+                        "timeZone": "America/Lima",
+                        "accountType": "app"
+                    },
+                    "created": "2026-06-08T14:59:39.184-0500",
+                    "items": [
+                        {
+                            "field": "Empresa - Grupo Resolutor",
+                            "fieldtype": "custom",
+                            "fieldId": "customfield_13272",
+                            "from": null,
+                            "fromString": null,
+                            "to": null,
+                            "toString": "Parent values: INTEGRATEL(621318)Level 1 values: NOC N1(627038)"
+                        },
+                        {
+                            "field": "Empresa - Grupo Resolutor (inicial)",
+                            "fieldtype": "custom",
+                            "fieldId": "customfield_16907",
+                            "from": null,
+                            "fromString": null,
+                            "to": null,
+                            "toString": "INTEGRATEL - NOC N1"
+                        }
+                    ],
+                    "historyMetadata": {}
+                },
+                {
+                    "id": "19019169",
+                    "author": {
+                        "self": "https://integratelperu.atlassian.net/rest/api/3/user?accountId=557058%3Af58131cb-b67d-43c7-b30d-6b58d40bd077",
+                        "accountId": "557058:f58131cb-b67d-43c7-b30d-6b58d40bd077",
+                        "avatarUrls": {
+                            "48x48": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "24x24": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "16x16": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "32x32": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png"
+                        },
+                        "displayName": "Automation for Jira",
+                        "active": true,
+                        "timeZone": "America/Lima",
+                        "accountType": "app"
+                    },
+                    "created": "2026-06-08T14:59:38.876-0500",
+                    "items": [
+                        {
+                            "field": "Tipología.",
+                            "fieldtype": "custom",
+                            "fieldId": "customfield_14651",
+                            "from": null,
+                            "fromString": null,
+                            "to": null,
+                            "toString": "#INCIDENCIAS RED"
+                        }
+                    ],
+                    "historyMetadata": {}
+                },
+                {
+                    "id": "19019168",
+                    "author": {
+                        "self": "https://integratelperu.atlassian.net/rest/api/3/user?accountId=557058%3Af58131cb-b67d-43c7-b30d-6b58d40bd077",
+                        "accountId": "557058:f58131cb-b67d-43c7-b30d-6b58d40bd077",
+                        "avatarUrls": {
+                            "48x48": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "24x24": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "16x16": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "32x32": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png"
+                        },
+                        "displayName": "Automation for Jira",
+                        "active": true,
+                        "timeZone": "America/Lima",
+                        "accountType": "app"
+                    },
+                    "created": "2026-06-08T14:59:38.680-0500",
+                    "items": [
+                        {
+                            "field": "Componente Afectado",
+                            "fieldtype": "custom",
+                            "fieldId": "customfield_14133",
+                            "from": null,
+                            "fromString": null,
+                            "to": null,
+                            "toString": "NOC MULTICAPA"
+                        }
+                    ],
+                    "historyMetadata": {}
+                },
+                {
+                    "id": "19019167",
+                    "author": {
+                        "self": "https://integratelperu.atlassian.net/rest/api/3/user?accountId=557058%3Af58131cb-b67d-43c7-b30d-6b58d40bd077",
+                        "accountId": "557058:f58131cb-b67d-43c7-b30d-6b58d40bd077",
+                        "avatarUrls": {
+                            "48x48": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "24x24": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "16x16": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png",
+                            "32x32": "https://secure.gravatar.com/avatar/600529a9c8bfef89daa848e6db28ed2d?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAJ-0.png"
+                        },
+                        "displayName": "Automation for Jira",
+                        "active": true,
+                        "timeZone": "America/Lima",
+                        "accountType": "app"
+                    },
+                    "created": "2026-06-08T14:59:38.596-0500",
+                    "items": [
+                        {
+                            "field": "Correo del solicitante",
+                            "fieldtype": "custom",
+                            "fieldId": "customfield_11276",
+                            "from": null,
+                            "fromString": null,
+                            "to": null,
+                            "toString": "tivoli.fija.pe@integratel.com.pe"
+                        }
+                    ],
+                    "historyMetadata": {}
+                },
+                {
+                    "id": "19019165",
+                    "author": {
+                        "self": "https://integratelperu.atlassian.net/rest/api/3/user?accountId=5cb4ae0e4b97ab11a18e00c7",
+                        "accountId": "5cb4ae0e4b97ab11a18e00c7",
+                        "avatarUrls": {
+                            "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5cb4ae0e4b97ab11a18e00c7/0c3fec9a-029d-422f-8586-89bc4ac2fe7e/48",
+                            "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5cb4ae0e4b97ab11a18e00c7/0c3fec9a-029d-422f-8586-89bc4ac2fe7e/24",
+                            "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5cb4ae0e4b97ab11a18e00c7/0c3fec9a-029d-422f-8586-89bc4ac2fe7e/16",
+                            "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5cb4ae0e4b97ab11a18e00c7/0c3fec9a-029d-422f-8586-89bc4ac2fe7e/32"
+                        },
+                        "displayName": "Atlassian Assist",
+                        "active": true,
+                        "timeZone": "America/Lima",
+                        "accountType": "app"
+                    },
+                    "created": "2026-06-08T14:59:34.874-0500",
+                    "items": [
+                        {
+                            "field": "Sentiment",
+                            "fieldtype": "custom",
+                            "fieldId": "customfield_12661",
+                            "from": null,
+                            "fromString": null,
+                            "to": "2000",
+                            "toString": "Neutral"
+                        }
+                    ]
+                }
+            ]
+        },
+        "fields": {
+            "summary": "LL00009 | NodeB Unavailable | SRLL1_COSCOMBA3",
+            "description": {
+                "type": "doc",
+                "version": 1,
+                "content": [
+                    {
+                        "type": "paragraph",
+                        "content": [
+                            {
+                                "type": "text",
+                                "text": "Masiva: NO\nGestor: HUAWEI MAE LIMA\nElemento: EBC\nNombre elemento: \n- ACCESO MOVIL: SRLL1_COSCOMBA3\nModo: AFECTACION TOTAL\nAlarma: NodeB Unavailable\nCapa: ACCESO MOVIL\nDescripcion de Alarma: Subrack No.=0, Slot No.=27, Subsystem No.=6, NodeB ID=739, NodeB Name=AN739U_COSCOMB3_ANCASH, Alarm Cause=Port of the NodeB unavailable.\nID Sitio (planta interna): LL00009\nID Sitio total: LL00009\nDepartamento: LA LIBERTAD\nFecha y hora de alarma: 2026-06-08 12:56:41\nTecnologia: 3G\nAcceso: TELEFÓNICA\nTipo Local: D_2\nCriticidad Local: \nSistema Hibrido: Sin Panel Solar\nOperador AM: INTEGRATEL\nProveedor FLM: HUAWEI\n\nArribo Alarma: 2026-06-08 12:58:40\n\nBandeja Asignada: NOC N1"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "customfield_10780": "2026-06-08T12:56:00.000-0500",
+            "customfield_11693": {
+                "type": "doc",
+                "version": 1,
+                "content": [
+                    {
+                        "type": "paragraph",
+                        "content": [
+                            {
+                                "type": "text",
+                                "text": "- ACCESO MOVIL: SRLL1_COSCOMBA3"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "customfield_11184": {
+                "self": "https://integratelperu.atlassian.net/rest/api/3/customFieldOption/627124",
+                "value": "Afectación Total",
+                "id": "627124"
+            },
+            "customfield_18008": []
+        }
+    }
+]

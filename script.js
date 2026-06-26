@@ -158,6 +158,8 @@ function renderIssue(issue) {
       || item.fieldId === 'customfield_18452';
   }
 
+  
+
   // Clave de agrupación: año-mes-dia-hora-minuto
   function minuteKey(dateStr) {
     if (!dateStr) return 'unknown';
@@ -169,14 +171,17 @@ function renderIssue(issue) {
   const events = [];
 
   // 1. Inicio de alarma
-  const alarmStart = fields?.customfield_10780 || (histories.length > 0 ? histories[0].created : null);
+  const alarmStart = fields?.customfield_10780 ?? null;
   events.push({ type: 'creation', time: alarmStart });
 
   // 2. Fin de alarma (del changelog)
   let alarmEnd = null;
   for (const h of histories) {
     for (const it of (h.items || [])) {
-      if (it.fieldId === 'customfield_10781' && it.to) {
+      if (
+        ((it.field || '').toLowerCase().includes('fecha y hora de fin'))
+        && it.to
+      ) {
         alarmEnd = { time: it.to, label: it.toString };
       }
     }
