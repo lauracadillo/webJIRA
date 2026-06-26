@@ -173,7 +173,7 @@ function renderIssue(issue) {
   const events = [];
 
   // 1. Inicio de alarma — viene de fields.customfield_10780 directamente
-  const alarmStart = fields.customfield_10780 || null;
+  const alarmStart = fields.customfield_10780;
   events.push({ type: 'creation', time: alarmStart });
 
   // 2. Recorrer changelog
@@ -295,7 +295,7 @@ function renderIssue(issue) {
     if (ev.type === 'creation') {
       return `
         <div class="tl-label" style="color:${DOT_COLORS.creation}">Inicio de alarma</div>
-        <div class="tl-detail">${esc(alarmStart)}</div>
+        <div class="tl-detail">${alarmStart}</div>
         ${fields.priority ? `<div class="tl-sub">Prioridad: ${esc(fields.priority?.name || fields.priority)}</div>` : ''}`;
 
     } else if (ev.type === 'status') {
