@@ -136,7 +136,7 @@ function renderIssue(issue) {
     gruporesolutor: '#0d9488',
     equipored:      '#dc2626',
     comentario:     '#b45309',
-    fin:            '#4ac36095',
+    fin:            '#16a34a',
   };
 
   function dotStyle(type) {
@@ -158,9 +158,11 @@ function renderIssue(issue) {
       || item.fieldId === 'customfield_18452';
   }
 
-  
+  function isFechaFin(item) {
+    return item.fieldId === 'customfield_10781'
+      || (item.field || '').toLowerCase().includes('fecha y hora de fin');
+  }
 
-  // Clave de agrupación: año-mes-dia-hora-minuto
   function minuteKey(dateStr) {
     if (!dateStr) return 'unknown';
     const d = new Date(dateStr);
@@ -170,66 +172,58 @@ function renderIssue(issue) {
 
   const events = [];
 
-  // 1. Inicio de alarma
-  const alarmStart = fields?.customfield_10780 ?? null;
+  // 1. Inicio de alarma — viene de fields.customfield_10780 directamente
+  const alarmStart = fields.customfield_10780 || null;
   events.push({ type: 'creation', time: alarmStart });
 
-  // 2. Fin de alarma (del changelog)
+  // 2. Recorrer changelog
   let alarmEnd = null;
+
   for (const h of histories) {
     for (const it of (h.items || [])) {
-      if (
-        ((it.field || '').toLowerCase().includes('fecha y hora de fin'))
-        && it.to
-      ) {
+
+      if (isStatus(it) && it.fromString !== it.toString) {
+        const key = minuteKey(h.created);
+        const dupe = events.some(e => e.type === 'status' && minuteKey(e.time) === key && e.from === it.fromString && e.to === it.toString);
+        if (!dupe) events.push({
+          type: 'status',
+          time: h.created,
+          from: it.fromString,
+          to: it.toString,
+          author: h.author?.displayName,
+        });
+      }
+
+      if (isGrupoResolutor(it) && it.toString) {
+        const key = minuteKey(h.created);
+        const dupe = events.some(e => e.type === 'gruporesolutor' && minuteKey(e.time) === key && e.from === it.fromString && e.to === it.toString);
+        if (!dupe) events.push({
+          type: 'gruporesolutor',
+          time: h.created,
+          from: it.fromString,
+          to: it.toString,
+          author: h.author?.displayName,
+        });
+      }
+
+      if (isEquipoRed(it) && it.toString) {
+        const key = minuteKey(h.created);
+        const dupe = events.some(e => e.type === 'equipored' && minuteKey(e.time) === key && e.from === it.fromString && e.to === it.toString);
+        if (!dupe) events.push({
+          type: 'equipored',
+          time: h.created,
+          from: it.fromString,
+          to: it.toString,
+          author: h.author?.displayName,
+        });
+      }
+
+      // Fecha y hora de Fin — guardamos el valor "to" del item, no el created del history
+      if (isFechaFin(it) && it.to) {
         alarmEnd = { time: it.to, label: it.toString };
       }
     }
   }
-  events.push({
-    type: 'fin',
-    time: alarmEnd ? alarmEnd.time : null,
-    label: alarmEnd ? alarmEnd.label : null,
-  });
-
-  // 2. Cambios relevantes del changelog
-  for (const h of histories) {
-      for (const it of (h.items || [])) {
-        if (isStatus(it) && it.fromString !== it.toString) {
-          const key = minuteKey(h.created);
-          const dupe = events.some(e => e.type === 'status' && minuteKey(e.time) === key && e.from === it.fromString && e.to === it.toString);
-          if (!dupe) events.push({
-            type: 'status',
-            time: h.created,
-            from: it.fromString,
-            to: it.toString,
-            author: h.author?.displayName,
-          });
-        }
-        if (isGrupoResolutor(it) && it.toString) {
-          const key = minuteKey(h.created);
-          const dupe = events.some(e => e.type === 'gruporesolutor' && minuteKey(e.time) === key && e.from === it.fromString && e.to === it.toString);
-          if (!dupe) events.push({
-            type: 'gruporesolutor',
-            time: h.created,
-            from: it.fromString,
-            to: it.toString,
-            author: h.author?.displayName,
-          });
-        }
-        if (isEquipoRed(it) && it.toString) {
-          const key = minuteKey(h.created);
-          const dupe = events.some(e => e.type === 'equipored' && minuteKey(e.time) === key && e.from === it.fromString && e.to === it.toString);
-          if (!dupe) events.push({
-            type: 'equipored',
-            time: h.created,
-            from: it.fromString,
-            to: it.toString,
-            author: h.author?.displayName,
-          });
-        }
-      }
-    }
 
   // 3. Último comentario
   const comments = fields?.comment?.comments || [];
@@ -253,38 +247,55 @@ function renderIssue(issue) {
     });
   }
 
-  // Ordenar por tiempo
-  events.sort((a, b) => {
-    if (a.time === null) return 1;
-    if (b.time === null) return 1;
-    return new Date(a.time || 0) - new Date(b.time || 0);
-  });
-  // Si en el mismo minuto hay equipored y gruporesolutor con el mismo "to", quitar el gruporesolutor
+  // Ordenar eventos intermedios (sin tocar fin)
+  events.sort((a, b) => new Date(a.time || 0) - new Date(b.time || 0));
+
+  // Filtrar gruporesolutor duplicado si hay equipored con mismo "to" en mismo minuto
   const filtered = events.filter(ev => {
     if (ev.type !== 'gruporesolutor') return true;
     const key = minuteKey(ev.time);
     return !events.some(e => e.type === 'equipored' && minuteKey(e.time) === key && e.to === ev.to);
   });
 
-  // Agrupar eventos que ocurren en el mismo minuto
+  // Agregar fin AL FINAL siempre, con su time real para mostrar pero forzado al último lugar
+  filtered.push({
+    type: 'fin',
+    time: alarmEnd ? alarmEnd.time : null,
+    label: alarmEnd ? alarmEnd.label : null,
+  });
+
+  // Agrupar por minuto
   const groups = [];
   for (const ev of filtered) {
     const key = minuteKey(ev.time);
     const last = groups[groups.length - 1];
-    if (last && last.key === key) {
+    // El evento "fin" nunca se agrupa con nada
+    if (ev.type === 'fin') {
+      groups.push({ key: 'fin', time: ev.time, events: [ev] });
+    } else if (last && last.key === key && last.events[0]?.type !== 'fin') {
       last.events.push(ev);
     } else {
       groups.push({ key, time: ev.time, events: [ev] });
     }
   }
 
-  // Renderizar cada evento individual dentro de un grupo
+  // Renderizar cuerpo de cada evento
+  function parseGrupo(str) {
+    if (!str) return null;
+    const m = str.match(/Level 1 values:\s*([^(]+)/i);
+    return m ? m[1].trim() : str;
+  }
+  function parseParent(str) {
+    if (!str) return null;
+    const m = str.match(/Parent values:\s*([^(]+)/i);
+    return m ? m[1].trim() : str;
+  }
+
   function renderEventBody(ev) {
     if (ev.type === 'creation') {
       return `
-        <div class="tl-label" style="color:${DOT_COLORS.creation}">Ticket creado</div>
+        <div class="tl-label" style="color:${DOT_COLORS.creation}">Inicio de alarma</div>
         <div class="tl-detail">${esc(fields.summary || '—')}</div>
-        ${fields.reporter ? `<div class="tl-sub">Reportado por: ${esc(fields.reporter?.displayName || fields.reporter)}</div>` : ''}
         ${fields.priority ? `<div class="tl-sub">Prioridad: ${esc(fields.priority?.name || fields.priority)}</div>` : ''}`;
 
     } else if (ev.type === 'status') {
@@ -292,37 +303,27 @@ function renderIssue(issue) {
         <div class="tl-label" style="color:${DOT_COLORS.status}">Cambio de estado</div>
         <div class="change-row" style="margin-top:4px">
           ${ev.from ? `<span class="val-old">${esc(ev.from)}</span><span class="arrow">→</span>` : ''}
-          <span class="val-new" style="background:#EEF4FD; color:#1A5FA8; border-color:#BBCFED>${esc(ev.to || '—')}</span>
+          <span class="val-new" style="background:#ede9fe;color:#5b21b6;border-color:#c4b5fd">${esc(ev.to || '—')}</span>
         </div>
         ${ev.author ? `<div class="tl-sub">Por: ${esc(ev.author)}</div>` : ''}`;
 
-   } else if (ev.type === 'gruporesolutor') {
-      function parseGrupo(str) {
-        if (!str) return null;
-        const m = str.match(/Level 1 values:\s*([^(]+)/i);
-        return m ? m[1].trim() : str;
-      }
-      function parseParent(str) {
-        if (!str) return null;
-        const m = str.match(/Parent values:\s*([^(]+)/i);
-        return m ? m[1].trim() : str;
-      }
-      const fromVal = parseParent(ev.to) || ev.from;
+    } else if (ev.type === 'gruporesolutor') {
+      const fromVal = parseParent(ev.from || ev.to);
       const toVal   = parseGrupo(ev.to);
       return `
         <div class="tl-label" style="color:${DOT_COLORS.gruporesolutor}">Cambio de grupo resolutor</div>
         <div class="change-row" style="margin-top:4px">
           ${fromVal ? `<span class="val-old">${esc(fromVal)}</span><span class="arrow">→</span>` : ''}
-          <span class="val-new" style="background:#EAF5E0; color:#2E7010; border-color:#A8D888">${esc(toVal || '—')}</span>
+          <span class="val-new" style="background:#ccfbf1;color:#0f766e;border-color:#99f6e4">${esc(toVal || '—')}</span>
         </div>
         ${ev.author ? `<div class="tl-sub">Por: ${esc(ev.author)}</div>` : ''}`;
 
     } else if (ev.type === 'equipored') {
       return `
-        <div class="tl-label" style="color:${DOT_COLORS.gruporesolutor}">Equipo de RED</div>
+        <div class="tl-label" style="color:${DOT_COLORS.equipored}">Equipo de RED</div>
         <div class="change-row" style="margin-top:4px">
           ${ev.from ? `<span class="val-old">${esc(ev.from)}</span><span class="arrow">→</span>` : ''}
-          <span class="val-new" style=" background:#FDEEED; color:#B03030; border-color:#F0BBBB">${esc(ev.to || '—')}</span>
+          <span class="val-new" style="background:#fee2e2;color:#991b1b;border-color:#fca5a5">${esc(ev.to || '—')}</span>
         </div>
         ${ev.author ? `<div class="tl-sub">Por: ${esc(ev.author)}</div>` : ''}`;
 
@@ -331,12 +332,14 @@ function renderIssue(issue) {
         <div class="tl-label" style="color:${DOT_COLORS.comentario}">Último comentario</div>
         <div class="tl-detail">${esc(ev.value)}</div>
         ${ev.author ? `<div class="tl-sub">Por: ${esc(ev.author)}</div>` : ''}`;
+
     } else if (ev.type === 'fin') {
-      return ev.label
+      return ev.time
         ? `<div class="tl-label" style="color:${DOT_COLORS.fin}">Fin de alarma</div>
-           <div class="tl-detail" style="color:${DOT_COLORS.fin};font-weight:500">${esc(ev.label)}</div>`
+           <div class="tl-detail" style="color:${DOT_COLORS.fin};font-weight:500">${esc(ev.label || fmtDate(ev.time))}</div>`
         : `<div class="tl-label" style="color:#6b7280">Fin de alarma</div>
-           <div class="tl-detail" style="color:#6b7280;font-weight:500;font-style:italic">TICKET ABIERTO</div>`;}
+           <div class="tl-detail" style="color:#6b7280;font-weight:500;font-style:italic">TICKET ABIERTO</div>`;
+    }
     return '';
   }
 
@@ -344,18 +347,14 @@ function renderIssue(issue) {
   const timelineHtml = groups.map((group, gi) => {
     const isLast = gi === groups.length - 1;
     const time = fmtDate(group.time);
-    // Dot color: si hay un solo evento usa su color, si hay varios usa gris medio
     const dotColor = group.events.length === 1
       ? (DOT_COLORS[group.events[0].type] || '#6b7280')
       : '#6b7280';
     const dotSt = `background:${dotColor};box-shadow:0 0 0 1.5px ${dotColor};`;
 
-    // Eventos dentro del grupo: si >1 se separan con un divisor fino
-    // Separar eventos de "estado" de los demás
     const statusEvs = group.events.filter(ev => ev.type === 'status');
     const otherEvs  = group.events.filter(ev => ev.type !== 'status');
 
-    // Si hay tanto status como otros, mostrarlos en dos columnas
     let eventsHtml = '';
     if (statusEvs.length > 0 && otherEvs.length > 0) {
       eventsHtml = `
@@ -370,27 +369,18 @@ function renderIssue(issue) {
     } else {
       eventsHtml = group.events.map((ev, ei) => {
         const isLastEv = ei === group.events.length - 1;
-        return `
-          <div>
-            ${renderEventBody(ev)}
-            ${!isLastEv ? `<div style="margin:8px 0;border-top:1px dashed var(--border);"></div>` : ''}
-          </div>`;
+        return `<div>${renderEventBody(ev)}${!isLastEv ? `<div style="margin:8px 0;border-top:1px dashed var(--border);"></div>` : ''}</div>`;
       }).join('');
     }
 
     return `
       <div class="tl-event">
-        <div class="tl-left">
-          <div class="tl-time-block">
-            <span class="tl-date">${esc(fmtDateOnly(group.time))}</span>
-            <span class="tl-hour">${esc(fmtHour(group.time))}</span>
-          </div>
-          <div class="tl-dot-wrap">
-            ${!isLast ? '<div class="tl-connector"></div>' : ''}
-          </div>
+        <div class="tl-dot-col">
+          <div class="tl-dot" style="${dotSt}"></div>
+          ${!isLast ? '<div class="tl-connector"></div>' : ''}
         </div>
         <div class="tl-body">
-          
+          <div class="tl-time">${esc(time)}</div>
           ${eventsHtml}
         </div>
       </div>`;
@@ -403,7 +393,7 @@ function renderIssue(issue) {
       <div class="inc-head">
         <div class="inc-meta">
           <span class="key-badge">${esc(issue.key)}</span>
-          ${afectacion ? `<span style="font-size:11px;font-weight:600;padding:2px 9px;border-radius:10px;background:rgba(245,166,35,0.15);color:#F5A623;border:1px solid rgba(245,166,35,0.35)">${esc(afectacion)}</span>` : ''}
+          ${afectacion ? `<span style="font-size:11px;font-weight:500;padding:2px 8px;border-radius:4px;background:#fef3c7;color:#92400e;border:1px solid #fcd34d">${esc(afectacion)}</span>` : ''}
         </div>
         <div class="inc-summary">${esc(fields.summary || '—')}</div>
       </div>
