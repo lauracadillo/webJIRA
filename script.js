@@ -295,7 +295,7 @@ function renderIssue(issue) {
     if (ev.type === 'creation') {
       return `
         <div class="tl-label" style="color:${DOT_COLORS.creation}">Inicio de alarma</div>
-        <div class="tl-detail">${esc(fields.summary || '—')}</div>
+        <div class="tl-detail">${esc(fields.alarmStart || '—')}</div>
         ${fields.priority ? `<div class="tl-sub">Prioridad: ${esc(fields.priority?.name || fields.priority)}</div>` : ''}`;
 
     } else if (ev.type === 'status') {
@@ -375,10 +375,7 @@ function renderIssue(issue) {
 
     return `
       <div class="tl-event">
-        <div class="tl-dot-col">
-          <div class="tl-dot" style="${dotSt}"></div>
-          ${!isLast ? '<div class="tl-connector"></div>' : ''}
-        </div>
+        
         <div class="tl-body">
           <div class="tl-time">${esc(time)}</div>
           ${eventsHtml}
