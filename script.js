@@ -254,7 +254,7 @@ function renderIssue(issue) {
           time: h.created,
           value: it.toString,
           author: h.author?.displayName,
-          label: 'Último comentario',
+          label: 'Comentario',
         });
       }
     }
