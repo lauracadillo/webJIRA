@@ -172,9 +172,18 @@ function renderIssue(issue) {
 
   const events = [];
 
-  // 1. Inicio de alarma — viene de fields.customfield_10780 directamente
-  const alarmStart = fields.customfield_10780 || null;
-  events.push({ type: 'creation', time: alarmStart });
+  // 1. Inicio de alarma
+  const alarmStart = fields.customfield_10780
+    ? new Date(fields.customfield_10780).toLocaleString('es-PE', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false,
+      }).replace(',', '')
+    : null;
+  events.push({ type: 'creation', time: fields.customfield_10780 || null });
 
   // 2. Recorrer changelog
   let alarmEnd = null;
@@ -218,9 +227,14 @@ function renderIssue(issue) {
         });
       }
 
-      // Fecha y hora de Fin — guardamos el valor "to" del item, no el created del history
+      // Fecha y hora de Fin — se agrega al flujo normal de eventos
       if (isFechaFin(it) && it.to) {
         alarmEnd = { time: it.to, label: it.toString };
+        events.push({
+          type: 'fin',
+          time: it.to,
+          label: it.toString,
+        });
       }
     }
   }
@@ -247,7 +261,7 @@ function renderIssue(issue) {
     });
   }
 
-  // Ordenar eventos intermedios (sin tocar fin)
+  // Ordenar todos los eventos cronológicamente
   events.sort((a, b) => new Date(a.time || 0) - new Date(b.time || 0));
 
   // Filtrar gruporesolutor duplicado si hay equipored con mismo "to" en mismo minuto
@@ -257,22 +271,17 @@ function renderIssue(issue) {
     return !events.some(e => e.type === 'equipored' && minuteKey(e.time) === key && e.to === ev.to);
   });
 
-  // Agregar fin AL FINAL siempre, con su time real para mostrar pero forzado al último lugar
-  filtered.push({
-    type: 'fin',
-    time: alarmEnd ? alarmEnd.time : null,
-    label: alarmEnd ? alarmEnd.label : null,
-  });
+  // Si no hubo fin en el changelog, agregar nodo "TICKET ABIERTO" al final
+  if (!alarmEnd) {
+    filtered.push({ type: 'fin', time: null, label: null });
+  }
 
   // Agrupar por minuto
   const groups = [];
   for (const ev of filtered) {
     const key = minuteKey(ev.time);
     const last = groups[groups.length - 1];
-    // El evento "fin" nunca se agrupa con nada
-    if (ev.type === 'fin') {
-      groups.push({ key: 'fin', time: ev.time, events: [ev] });
-    } else if (last && last.key === key && last.events[0]?.type !== 'fin') {
+    if (last && last.key === key) {
       last.events.push(ev);
     } else {
       groups.push({ key, time: ev.time, events: [ev] });
@@ -374,11 +383,12 @@ function renderIssue(issue) {
     }
 
     return `
-      <div class="tl-event">
-        
-        <div class="tl-body">
-          <div class="tl-time">${esc(time)}</div>
-          ${eventsHtml}
+      <div style="padding-right:8px;border-right:1px;border-width: 4px; dashed var(--border)">
+        <div class="tl-event">
+          <div class="tl-body">
+            <div class="tl-time">${esc(time)}</div>
+            ${eventsHtml}
+          </div>
         </div>
       </div>`;
   }).join('');
