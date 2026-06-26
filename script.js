@@ -295,7 +295,7 @@ function renderIssue(issue) {
     if (ev.type === 'creation') {
       return `
         <div class="tl-label" style="color:${DOT_COLORS.creation}">Inicio de alarma</div>
-        <div class="tl-detail">${esc(fields.alarmStart || '—')}</div>
+        <div class="tl-detail">${esc(alarmStart)}</div>
         ${fields.priority ? `<div class="tl-sub">Prioridad: ${esc(fields.priority?.name || fields.priority)}</div>` : ''}`;
 
     } else if (ev.type === 'status') {
