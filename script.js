@@ -1,5 +1,4 @@
 
-//TODO: AGRGERGAR HORA DE INICIO Y HORA DE FIN
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzmQS0X_SDse5tpwDpF-ur5IFIv0TghfIGIDyA5B_GESZDQeTiuslH1L5h5G7spEHNF4g/exec';
 // ─────────────────────────────────────────────
 
@@ -236,6 +235,28 @@ function renderIssue(issue) {
           label: it.toString,
         });
       }
+
+      // Comentario de Derivacion
+      if (it.fieldId === 'customfield_19462' && it.toString) {
+        events.push({
+          type: 'comentario',
+          time: h.created,
+          value: it.toString,
+          author: h.author?.displayName,
+          label: 'Comentario de derivación',
+        });
+      }
+
+      // Ultimo Comentario (url de adjunto, mostrar como enlace)
+      if (it.fieldId === 'customfield_19529' && it.toString) {
+        events.push({
+          type: 'comentario',
+          time: h.created,
+          value: it.toString,
+          author: h.author?.displayName,
+          label: 'Último comentario',
+        });
+      }
     }
   }
 
@@ -337,7 +358,7 @@ function renderIssue(issue) {
 
     } else if (ev.type === 'comentario') {
       return `
-        <div class="tl-label" style="color:${DOT_COLORS.comentario}">Último comentario</div>
+        <div class="tl-label" ...>${esc(ev.label || 'Comentario')}</div>
         <div class="tl-detail">${esc(ev.value)}</div>
         ${ev.author ? `<div class="tl-sub">Por: ${esc(ev.author)}</div>` : ''}`;
 
