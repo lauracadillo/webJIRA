@@ -410,7 +410,13 @@ function renderIssue(issue) {
       }).join('');
     }
 
-    ;
+    return `
+      ${hourPill}
+      <div class="tl-event">
+        <div class="tl-body">
+          ${eventsHtml}
+        </div>
+      </div>`;
   }).join('');
 
   const afectacion = fields?.customfield_11184?.value || null;
