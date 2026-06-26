@@ -304,7 +304,6 @@ function renderIssue(issue) {
     if (ev.type === 'creation') {
       return `
         <div class="tl-label" style="color:${DOT_COLORS.creation}">Inicio de alarma</div>
-        <div class="tl-detail">${esc(alarmStart)}</div>
         ${fields.priority ? `<div class="tl-sub">Prioridad: ${esc(fields.priority?.name || fields.priority)}</div>` : ''}`;
 
     } else if (ev.type === 'status') {
@@ -384,9 +383,9 @@ function renderIssue(issue) {
         <span style="
           font-size:11px;font-weight:700;letter-spacing:0.05em;
           padding:3px 10px;border-radius:999px;
-          background:#1e293b;color:#f8fafc;
+          background:#0085CC;color:#ffffff;
           white-space:nowrap;box-shadow:0 1px 4px rgba(0,0,0,0.18);
-        ">${esc(hourLabel(group.time))}</span>
+        ">${esc(time)}</span>
         <div style="flex:1;height:1px;background:var(--border,#e5e7eb)"></div>
       </div>` : '';
 
@@ -411,14 +410,7 @@ function renderIssue(issue) {
       }).join('');
     }
 
-    return `
-      ${hourPill}
-      <div class="tl-event">
-        <div class="tl-body">
-          <div class="tl-time">${esc(time)}</div>
-          ${eventsHtml}
-        </div>
-      </div>`;
+    ;
   }).join('');
 
   const afectacion = fields?.customfield_11184?.value || null;
