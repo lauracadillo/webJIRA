@@ -352,6 +352,20 @@ function renderIssue(issue) {
     return '';
   }
 
+  function hourLabel(dateStr) {
+    if (!dateStr) return null;
+    const d = new Date(dateStr);
+    if (isNaN(d)) return null;
+    return d.toLocaleTimeString('es-PE', { hour: '2-digit', minute: '2-digit', hour12: false });
+  }
+
+  function hourKey(dateStr) {
+    if (!dateStr) return null;
+    const d = new Date(dateStr);
+    if (isNaN(d)) return null;
+    return `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}-${d.getHours()}`;
+  }
+
   // Renderizar grupos
   const timelineHtml = groups.map((group, gi) => {
     const isLast = gi === groups.length - 1;
@@ -360,6 +374,21 @@ function renderIssue(issue) {
       ? (DOT_COLORS[group.events[0].type] || '#6b7280')
       : '#6b7280';
     const dotSt = `background:${dotColor};box-shadow:0 0 0 1.5px ${dotColor};`;
+
+    // Pill de hora si cambia respecto al grupo anterior
+    const prevGroup = gi > 0 ? groups[gi - 1] : null;
+    const showHourPill = hourKey(group.time) !== hourKey(prevGroup?.time);
+    const hourPill = showHourPill && group.time ? `
+      <div style="display:flex;align-items:center;gap:8px;margin:10px 0 6px;">
+        <div style="flex:1;height:1px;background:var(--border,#e5e7eb)"></div>
+        <span style="
+          font-size:11px;font-weight:700;letter-spacing:0.05em;
+          padding:3px 10px;border-radius:999px;
+          background:#1e293b;color:#f8fafc;
+          white-space:nowrap;box-shadow:0 1px 4px rgba(0,0,0,0.18);
+        ">${esc(hourLabel(group.time))}</span>
+        <div style="flex:1;height:1px;background:var(--border,#e5e7eb)"></div>
+      </div>` : '';
 
     const statusEvs = group.events.filter(ev => ev.type === 'status');
     const otherEvs  = group.events.filter(ev => ev.type !== 'status');
@@ -383,12 +412,11 @@ function renderIssue(issue) {
     }
 
     return `
-      <div style="padding-right:8px;border-right:1px;border-width: 4px; dashed var(--border)">
-        <div class="tl-event">
-          <div class="tl-body">
-            <div class="tl-time">${esc(time)}</div>
-            ${eventsHtml}
-          </div>
+      ${hourPill}
+      <div class="tl-event">
+        <div class="tl-body">
+          <div class="tl-time">${esc(time)}</div>
+          ${eventsHtml}
         </div>
       </div>`;
   }).join('');
